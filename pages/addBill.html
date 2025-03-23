@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bill</title>
+    <link href="./addBill.css" rel="stylesheet"/>
+    <script src="./addBill.js"></script>
+</head>
+<body>
+    <h2 style="text-align: center;">Add Bill</h2>
+    <form id="billForm">
+        <label>Consumer No:</label>
+        <input type="text" id="consumerNo" required>
+        <div class="error" id="consumerNoError"></div>
+
+        <label>Billing Period:</label>
+        <input type="month" id="billingPeriod" required>
+        <div class="error" id="billingPeriodError"></div>
+
+        <label>Bill Date:</label>
+        <input type="date" id="billDate" required>
+        <div class="error" id="billDateError"></div>
+
+        <label>Due Date:</label>
+        <input type="date" id="dueDate" required>
+        <div class="error" id="dueDateError"></div>
+
+        <label>Disconnection Date:</label>
+        <input type="date" id="disconnectionDate" required>
+        <div class="error" id="disconnectionDateError"></div>
+
+        <label>Bill Amount:</label>
+        <input type="number" id="billAmount" required>
+        <div class="error" id="billAmountError"></div>
+
+        <label>Late Fee:</label>
+        <input type="number" id="lateFee" value="0">
+
+        <label>Status:</label>
+        <select id="status">
+            <option value="Unpaid">Unpaid</option>
+            <option value="Paid">Paid</option>
+        </select>
+
+        <button type="button" onclick="saveBill()">Save</button>
+        <button type="button" onclick="goToDashboard()">Back to Dashboard</button>
+    </form>
+
+    <h3 style="text-align: center;">Bulk Upload Bills</h3>
+    <form id="bulkUploadForm">
+        <label for="fileInput">Upload CSV File:</label>
+        <input type="file" id="fileInput" accept=".csv">
+        <button type="button" onclick="uploadBills()">Upload</button>
+    </form>
+    
+    <div id="popupMessage" class="popup">
+        <div class="popup-header">
+            <strong id="popupTitle">Message</strong>
+            <button onclick="closePopup()">&times;</button>
+        </div>
+        <p id="popupText"></p>
+        <button onclick="addAnotherBill()">Add Another Bill</button>
+        <button onclick="goToDashboard()">Return to Dashboard</button>
+    </div>
+</body>
+</html>

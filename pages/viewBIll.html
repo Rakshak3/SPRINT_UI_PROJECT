@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Bill History</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="./viewBill.css" rel="stylesheet"/>
+    <script src="./viewBill.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Bill History</h2>
+        <input type="text" id="customerId" placeholder="Enter Customer ID / Consumer Number">
+        <button onclick="searchCustomer()">Search</button>
+        <p id="error" class="error"></p>
+        
+        <div id="filters" class="filters">
+            <select id="billingPeriodFilter">
+                <option value="all">All Periods</option>
+                <option value="6months">Last 6 Months</option>
+                <option value="year">This Year</option>
+            </select>
+            <select id="paymentStatusFilter">
+                <option value="all">All</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+            </select>
+            <button onclick="exportToPDF()">Export PDF</button>
+            <button onclick="exportToCSV()">Export CSV</button>
+        </div>
+        
+        <table id="billTable">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Bill ID</th>
+                    <th>Billing Period</th>
+                    <th>Bill Date</th>
+                    <th>Due Date</th>
+                    <th>Bill Amount</th>
+                    <th>Late Fee</th>
+                    <th>Payment Status</th>
+                    <th>Payment Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="billData"></tbody>
+        </table>
+    </div>
+ 
+</body>
+</html>
