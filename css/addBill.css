@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #afdde5;
+    color: #05505a;
+}
+form {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #05505a;
+    border-radius: 4px;
+}
+.error {
+    color: red;
+    font-size: 12px;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    border: 2px solid #05505a;
+}
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.popup-header button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: red;
+}
+.popup.success {
+    border-left: 5px solid green;
+}
+.popup.error-message {
+    border-left: 5px solid red;
+}
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #05505a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #033e45;
+}
+#bulkUploadForm {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
